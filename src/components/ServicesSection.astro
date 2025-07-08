@@ -6,13 +6,15 @@ const { title, services } = Astro.props
 
 ---
 
-<section class="bs-container bs-mt-lg" id="pricing">
+<section class="bs-mt-lg bg-bs-surface-2/60 mask-b-from-80% mask-t-from-90% py-20 " id="pricing">
 
-  <!-- Header -->
-  { title && <h2 class="bs-h2 text-start gold-text">{ title }</h2>}
+  <div class="bs-container">
 
-  <!-- pricing -->
-  <div class="mt-8 grid lg:grid-cols-2 gap-8 lg:gap-0">
+    <!-- Header -->
+    { title && <h2 class="bs-h2 text-start gold-text">{ title }</h2>}
+
+    <!-- pricing -->
+    <div class="mt-8 grid lg:grid-cols-2 gap-8 lg:gap-0">
 
     <!-- Item -->
 

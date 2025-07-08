@@ -2,8 +2,18 @@ import { defineConfig } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
+  site: "https://www.fernandesfabri.com",
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    server: {
+      allowedHosts: [
+        "localhost", 
+        "127.0.0.1", 
+        "::1", 
+        "localhost.localtest.me", 
+        "quick-hornets-wink.loca.lt" //TODO: Remove
+      ]
+    }
   },
   experimental: {
     fonts: [{
