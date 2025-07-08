@@ -1,0 +1,33 @@
+---
+const { title } = Astro.props;
+import Ana from '../assets/images/ana.jpg'
+import Image from 'astro/components/Image.astro'
+---
+
+<section id="about" class="py-16 md:py-24">
+  <div class="bs-container">
+    {title && <h2 class="bs-h2 mb-8 md:mb-12 gold-text">{title}</h2>}
+
+    <div class="flex flex-col md:flex-row md:items-start gap-8 md:gap-16">
+      <div class="w-full md:w-2/5 lg:w-1/3">
+        <div class="rounded-3xl border border-bs-surface-3 overflow-hidden aspect-square flex items-start justify-center">
+          <Image src={Ana} alt="Ana" class="w-full h-full object-cover object-top" />
+        </div>
+      </div>
+
+      <div class="w-full h-full md:w-3/5 lg:w-2/3 space-y-6 flex flex-col justify-start">
+          <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold gold-text">Ana Fernandes Fabri</h3>
+          <p class="bs-body-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
+          </p>
+          <p class="bs-body-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
+          </p>
+      </div>
+    </div>
+  </div>
+</section>

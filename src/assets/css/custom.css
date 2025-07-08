@@ -1,0 +1,51 @@
+body {
+    background-image: url("../images/texture.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.gold-text {
+    background: linear-gradient(135deg,
+            #f7e07d,
+            #f6c554,
+            #d4af37,
+            #b38628,
+            #f7e07d,
+            #fff2b0);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s ease-in-out infinite alternate;
+    font-weight: bold;
+    background-position: 0% 50%;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Fallback para navegadores que não suportam background-clip em texto */
+@supports not (-webkit-background-clip: text) {
+    .gold-text {
+        color: #d4af37;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+.default-btn {
+    background-color: #000D20;
+    cursor: pointer;
+}
