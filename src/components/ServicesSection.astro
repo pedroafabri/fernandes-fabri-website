@@ -6,7 +6,7 @@ const { title, services } = Astro.props
 
 ---
 
-<section class="bs-mt-lg bg-bs-surface-2/60 mask-b-from-80% mask-t-from-90% py-20 " id="pricing">
+<section class="bs-mt-lg bg-bs-surface-2/60 mask-b-from-80% mask-t-from-90% py-20 " id="services">
 
   <div class="bs-container">
 
@@ -21,7 +21,7 @@ const { title, services } = Astro.props
     { services.map( ( item, index ) =>
 
     <article
-      class:list={['@container p-6 xl:p-16 flex flex-col gap-6 h-full w-full rounded-xl overflow-hidden lg:scale-90 @xl:justify-end bg-bs-surface-1/60']}>
+      class:list={['@container p-6 xl:p-16 flex flex-col gap-6 h-full w-full rounded-xl overflow-hidden lg:scale-90 @xl:justify-end bg-bs-surface-2/40 border border-bs-surface-3']}>
 
       <!-- Content -->
       <div class="relative">

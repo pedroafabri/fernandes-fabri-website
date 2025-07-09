@@ -1,7 +1,6 @@
 ---
 import Logo from "../assets/images/logo.svg";
 import CtaButton from "./CtaButton.astro";
-import header from "../data/header.json";
 const { settings } = Astro.props;
 ---
 
@@ -10,7 +9,7 @@ const { settings } = Astro.props;
   <div class="bs-container py-6 flex justify-start items-center">
     <!-- Logo -->
     <a
-      class="flex xl:min-w-32 group"
+      class="hidden md:flex xl:min-w-32 group"
       href="/"
       aria-label={settings.title + " - Home"}
     >
@@ -25,19 +24,50 @@ const { settings } = Astro.props;
     <nav class="hidden col-span-6 md:flex self-stretch lg:gap-2 justify-start">
       <!-- Links -->
       {
-        settings.nav.sort((a,b) => a.order - b.order).map((item) => (
-          <a
-            class="bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0 gold-text"
-            href={item.link}
-          >
-            {item.title}
-          </a>
-        ))
+        settings.nav
+          .sort((a, b) => a.order - b.order)
+          .map((item) => (
+            <a
+              class="bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0 gold-text"
+              href={item.link}
+            >
+              {item.title}
+            </a>
+          ))
       }
     </nav>
 
+    <!-- Mobile Nav -->
+    <div x-data="{ open: false }" class="md:hidden relative z-50">
+      <!-- Botão de menu -->
+      <button @click="open = !open" class="bs-btn !bg-transparent gold-text">
+        ☰ Menu
+      </button>
+
+      <!-- Menu dropdown -->
+      <div
+        x-show="open"
+        @click.away="open = false"
+        x-transition
+        class="absolute left-0 mt-2 w-48 bg-bs-surface-1/90 border border-bs-surface-3 rounded-md shadow-lg backdrop-blur p-2 space-y-2"
+      >
+        {
+          settings.nav
+            .sort((a, b) => a.order - b.order)
+            .map((item) => (
+              <a
+                class="block bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0 gold-text"
+                href={item.link}
+                @click="open = false"
+              >
+                {item.title}
+              </a>
+            ))
+        }
+      </div>
+    </div>
+
     <!-- CTA -->
     <CtaButton settings={settings} />
-
   </div>
 </header>
