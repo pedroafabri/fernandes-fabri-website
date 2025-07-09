@@ -11,7 +11,7 @@ export default defineConfig({
         "127.0.0.1", 
         "::1", 
         "localhost.localtest.me", 
-        "quick-hornets-wink.loca.lt" //TODO: Remove
+        "petite-lamps-dig.loca.lt" //TODO: Remove
       ]
     }
   },
