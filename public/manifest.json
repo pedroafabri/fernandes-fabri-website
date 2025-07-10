@@ -1,9 +1,9 @@
 {
-  "lang": "en",
+  "lang": "pt-BR",
   "dir": "ltr",
-  "name": "blackspike astro landing page",
-  "description": "A free Astro landing theme made with Tailwind to help kick start your Astro website.",
-  "short_name": "blackspike astro theme",
+  "name": "Fernandes Fabri - Advocacia Empresarial",
+  "description": "Advocacia Empresarial especializada em contratos para prestadores de serviços.",
+  "short_name": "Fernandes Fabri",
   "theme_color": "#18181B",
   "icons": [
     {
