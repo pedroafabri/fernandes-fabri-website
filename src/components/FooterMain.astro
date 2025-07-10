@@ -54,7 +54,7 @@ const { settings } = Astro.props
 
           { settings.social_links.sort((a,b) => a.title.localeCompare(b.title)).map( item =>
 
-            <a href={ item.link }>
+            <a href={ item.link } target="_blank" rel="noopener noreferrer">
               { item.title }
             </a>
 
